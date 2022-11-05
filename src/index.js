@@ -9,11 +9,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'assets/carimobil.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'assets/rent.css';
+import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
+import store from 'ex-redux';
+
+ const history = createBrowserHistory()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<Router>
+ <Provider store={store}> 
+<Router history={history}>
     <App />
   </Router>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
